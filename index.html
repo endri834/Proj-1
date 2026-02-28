@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Platforma kryesore e pronave dhe këshillave ligjore në Shqipëri | Premier real estate and legal advisory platform in Albania">
+<meta name="keywords" content="imobiliare shqiperi, prona, real estate albania, keshilla ligjore, legal advice">
+<title>TERRA | Imobiliare & Këshilla Ligjore</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --warm-white: #FAFAF7;
+    --charcoal: #1C1C1A;
+    --deep: #0D0D0B;
+    --gold: #B8975A;
+    --gold-light: #D4AF7A;
+    --muted: #8A8680;
+    --border: #E0D9CF;
+    --section-bg: #F0EAE0;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--charcoal);
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ---- LANGUAGE TOGGLE ---- */
+  .lang-bar {
+    background: var(--charcoal);
+    color: var(--cream);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 48px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .lang-btn {
+    background: none;
+    border: 1px solid rgba(255,255,255,0.25);
+    color: var(--cream);
+    padding: 4px 14px;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+  .lang-btn.active { background: var(--gold); border-color: var(--gold); color: var(--deep); }
+  .lang-btn:hover:not(.active) { background: rgba(255,255,255,0.1); }
+
+  /* ---- NAV ---- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250,250,247,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 68px;
+  }
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: var(--charcoal);
+    text-decoration: none;
+  }
+  .logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--charcoal); }
+  .nav-cta {
+    background: var(--charcoal);
+    color: var(--cream) !important;
+    padding: 10px 24px !important;
+    letter-spacing: 0.08em !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--gold) !important; color: var(--deep) !important; }
+
+  /* ---- HERO ---- */
+  .hero {
+    min-height: 88vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+  }
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 64px 80px 80px;
+    background: var(--warm-white);
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 68px;
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--charcoal);
+    margin-bottom: 28px;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero-sub {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 420px;
+    line-height: 1.7;
+    margin-bottom: 48px;
+  }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--charcoal);
+    color: var(--cream);
+    padding: 14px 36px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold); color: var(--deep); }
+  .btn-outline {
+    background: transparent;
+    color: var(--charcoal);
+    padding: 14px 36px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1px solid var(--charcoal);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { background: var(--charcoal); color: var(--cream); }
+
+  .hero-visual {
+    position: relative;
+    background: var(--charcoal);
+    overflow: hidden;
+  }
+  .hero-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    transition: transform 8s ease;
+  }
+  .hero-visual:hover img { transform: scale(1.05); }
+  .hero-badge {
+    position: absolute;
+    bottom: 40px;
+    left: -20px;
+    background: var(--gold);
+    color: var(--deep);
+    padding: 24px 32px;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .hero-badge strong { display: block; font-size: 36px; font-weight: 600; }
+  .hero-badge span { font-size: 13px; letter-spacing: 0.06em; }
+
+  /* ---- STATS ---- */
+  .stats {
+    background: var(--charcoal);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .stat-item {
+    padding: 40px 36px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label { font-size: 12px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 8px; }
+
+  /* ---- SEARCH SECTION ---- */
+  .search-section {
+    padding: 80px 80px 64px;
+    background: var(--warm-white);
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 300;
+    margin-bottom: 8px;
+  }
+  .section-subtitle { color: var(--muted); font-size: 15px; margin-bottom: 48px; }
+
+  .search-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  .tab-btn {
+    background: none;
+    border: none;
+    padding: 12px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: var(--muted);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: all 0.2s;
+  }
+  .tab-btn.active { color: var(--charcoal); border-bottom-color: var(--gold); }
+  .tab-btn:hover:not(.active) { color: var(--charcoal); }
+
+  .search-filters {
+    background: var(--section-bg);
+    padding: 36px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr auto;
+    gap: 16px;
+    align-items: end;
+  }
+  .filter-group label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .filter-group select,
+  .filter-group input {
+    width: 100%;
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    padding: 12px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--charcoal);
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+  }
+  .filter-group select:focus,
+  .filter-group input:focus { outline: 1px solid var(--gold); }
+
+  .search-btn {
+    background: var(--gold);
+    color: var(--deep);
+    border: none;
+    padding: 13px 32px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+    align-self: end;
+  }
+  .search-btn:hover { background: var(--charcoal); color: var(--cream); }
+
+  /* ---- PROPERTIES GRID ---- */
+  .properties-section {
+    padding: 64px 80px 80px;
+    background: var(--warm-white);
+  }
+  .properties-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+  }
+  .view-all {
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .view-all::after { content: '→'; }
+  .view-all:hover { color: var(--charcoal); }
+
+  .properties-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .property-card {
+    background: var(--cream);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+    position: relative;
+  }
+  .property-card:first-child {
+    grid-row: span 2;
+  }
+  .property-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.12); z-index: 1; }
+  .property-img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+    background: linear-gradient(135deg, #c9c4bc, #a8a39b);
+    transition: transform 0.6s;
+  }
+  .property-card:first-child .property-img { height: 400px; }
+  .property-card:hover .property-img { transform: scale(1.04); }
+  .property-img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    color: rgba(255,255,255,0.4);
+  }
+  .property-tag {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    background: var(--gold);
+    color: var(--deep);
+    padding: 6px 16px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .property-info { padding: 24px; }
+  .property-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--charcoal);
+    margin-bottom: 6px;
+  }
+  .property-name {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .property-loc {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .property-specs {
+    display: flex;
+    gap: 20px;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+  }
+  .spec { display: flex; align-items: center; gap: 6px; }
+
+  /* ---- SERVICES ---- */
+  .services-section {
+    background: var(--charcoal);
+    padding: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .services-content {}
+  .services-content .section-title { color: var(--cream); }
+  .services-content .section-subtitle { color: var(--muted); }
+  .services-list { margin-top: 40px; }
+  .service-item {
+    display: flex;
+    gap: 24px;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .service-item:last-child { border-bottom: none; }
+  .service-item:hover .service-num { color: var(--gold); }
+  .service-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.15);
+    line-height: 1;
+    transition: color 0.2s;
+    min-width: 48px;
+  }
+  .service-text h3 { color: var(--cream); font-size: 16px; font-weight: 400; margin-bottom: 6px; }
+  .service-text p { color: var(--muted); font-size: 14px; line-height: 1.6; }
+
+  .services-visual {
+    position: relative;
+  }
+  .services-visual-img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    filter: grayscale(20%);
+    background: linear-gradient(160deg, #3a3830, #1c1c1a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .legal-badge {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: var(--gold);
+    color: var(--deep);
+    padding: 32px;
+    width: 160px;
+    text-align: center;
+  }
+  .legal-badge .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    display: block;
+    line-height: 1;
+  }
+  .legal-badge .lbl { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 4px; display: block; }
+
+  /* ---- BLOG SECTION ---- */
+  .blog-section {
+    padding: 80px;
+    background: var(--section-bg);
+  }
+  .blog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 48px;
+  }
+  .blog-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2px;
+  }
+  .blog-card {
+    background: var(--warm-white);
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  .blog-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.1); z-index: 1; }
+  .blog-img {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, #d4c8b8, #b8a898);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    color: rgba(255,255,255,0.5);
+    overflow: hidden;
+  }
+  .blog-card:first-child .blog-img { height: 280px; }
+  .blog-category {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .blog-info { padding: 28px; }
+  .blog-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 12px;
+    color: var(--charcoal);
+  }
+  .blog-card:first-child .blog-title { font-size: 28px; }
+  .blog-excerpt { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+  .blog-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+  }
+  .read-more { color: var(--gold); text-decoration: none; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .read-more:hover { color: var(--charcoal); }
+
+  /* ---- CONTACT ---- */
+  .contact-section {
+    background: var(--warm-white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .contact-info {
+    padding: 80px;
+    background: var(--charcoal);
+    color: var(--cream);
+  }
+  .contact-info .section-title { color: var(--cream); }
+  .contact-info .section-subtitle { color: var(--muted); }
+  .contact-detail {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .contact-item { display: flex; gap: 20px; align-items: flex-start; }
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 18px;
+  }
+  .contact-item-text { font-size: 14px; line-height: 1.5; }
+  .contact-item-text strong { display: block; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; font-weight: 400; }
+
+  .contact-form { padding: 80px; }
+  .contact-form .section-title { margin-bottom: 32px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .form-group { margin-bottom: 16px; }
+  .form-group label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    background: var(--section-bg);
+    border: 1px solid var(--border);
+    padding: 13px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--charcoal);
+    resize: vertical;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { outline: 1px solid var(--gold); }
+
+  /* ---- FOOTER ---- */
+  footer {
+    background: var(--deep);
+    color: var(--muted);
+    padding: 60px 80px 32px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+  .footer-brand .logo { margin-bottom: 16px; display: block; }
+  .footer-brand p { font-size: 14px; line-height: 1.7; color: var(--muted); }
+  .footer-col h4 {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 10px; }
+  .footer-col a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--gold); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    align-items: center;
+  }
+
+  /* ---- LANGUAGE CONTENT ---- */
+  [data-lang="en"] { display: none; }
+  body.lang-en [data-lang="sq"] { display: none; }
+  body.lang-en [data-lang="en"] { display: block; }
+
+  /* inline lang switches */
+  span[data-lang] { display: none; }
+  body.lang-en span[data-lang="en"] { display: inline; }
+  :not(body.lang-en) span[data-lang="sq"] { display: inline; }
+
+  /* ---- ANIMATIONS ---- */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-content > * {
+    animation: fadeUp 0.7s ease forwards;
+    opacity: 0;
+  }
+  .hero-eyebrow { animation-delay: 0.1s; }
+  .hero h1 { animation-delay: 0.25s; }
+  .hero-sub { animation-delay: 0.4s; }
+  .hero-actions { animation-delay: 0.55s; }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 1100px) {
+    .hero h1 { font-size: 52px; }
+    .hero-content { padding: 60px 40px; }
+    .search-filters { grid-template-columns: 1fr 1fr 1fr; }
+    .search-filters .search-btn { grid-column: span 3; }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-visual { height: 300px; }
+    .hero-content { padding: 48px 24px; }
+    .hero h1 { font-size: 40px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .search-section, .properties-section, .services-section, .blog-section, .contact-info, .contact-form { padding: 48px 24px; }
+    .search-filters { grid-template-columns: 1fr; }
+    .search-filters .search-btn { grid-column: 1; }
+    .properties-grid, .blog-grid { grid-template-columns: 1fr; }
+    .property-card:first-child { grid-row: auto; }
+    .services-section, .contact-section { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .lang-bar { padding: 8px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LANG BAR -->
+<div class="lang-bar">
+  <span>🌐</span>
+  <button class="lang-btn active" id="btn-sq" onclick="setLang('sq')">SQ</button>
+  <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#">TER<span>R</span>A</a>
+  <ul class="nav-links">
+    <li><a href="#search"><span data-lang="sq">Prona</span><span data-lang="en">Properties</span></a></li>
+    <li><a href="#services"><span data-lang="sq">Shërbime</span><span data-lang="en">Services</span></a></li>
+    <li><a href="#blog"><span data-lang="sq">Blog Ligjor</span><span data-lang="en">Legal Blog</span></a></li>
+    <li><a href="#contact" class="nav-cta"><span data-lang="sq">Na Kontaktoni</span><span data-lang="en">Contact Us</span></a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow"><span data-lang="sq">Imobiliare & Këshilla Ligjore</span><span data-lang="en">Real Estate & Legal Advisory</span></div>
+    <h1>
+      <span data-lang="sq">Gjeni <em>pronën</em> tuaj të ardhme</span>
+      <span data-lang="en">Find your <em>future</em> property</span>
+    </h1>
+    <p class="hero-sub">
+      <span data-lang="sq">Platformë e plotë për blerjen, shitjen dhe investimin e pronave, me mbështetje ligjore profesionale në çdo hap të rrugës.</span>
+      <span data-lang="en">A complete platform for buying, selling and investing in properties, with professional legal support at every step of the way.</span>
+    </p>
+    <div class="hero-actions">
+      <a href="#search" class="btn-primary"><span data-lang="sq">Kërko Prona</span><span data-lang="en">Search Properties</span></a>
+      <a href="#services" class="btn-outline"><span data-lang="sq">Shërbime Ligjore</span><span data-lang="en">Legal Services</span></a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=80" alt="Luxury property" onerror="this.style.display='none'">
+    <div class="hero-badge">
+      <strong>500+</strong>
+      <span data-lang="sq">Prona Aktive</span><span data-lang="en">Active Listings</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat-item">
+    <div class="stat-num">500+</div>
+    <div class="stat-label"><span data-lang="sq">Prona Aktive</span><span data-lang="en">Active Properties</span></div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">12+</div>
+    <div class="stat-label"><span data-lang="sq">Vite Eksperiencë</span><span data-lang="en">Years Experience</span></div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">1200+</div>
+    <div class="stat-label"><span data-lang="sq">Klientë të Kënaqur</span><span data-lang="en">Happy Clients</span></div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">100%</div>
+    <div class="stat-label"><span data-lang="sq">Mbështetje Ligjore</span><span data-lang="en">Legal Coverage</span></div>
+  </div>
+</div>
+
+<!-- SEARCH -->
+<section class="search-section" id="search">
+  <div>
+    <div data-lang="sq">
+      <h2 class="section-title">Kërko Prona</h2>
+      <p class="section-subtitle">Filtro sipas lokacionit, çmimit, sipërfaqes dhe më shumë</p>
+    </div>
+    <div data-lang="en">
+      <h2 class="section-title">Search Properties</h2>
+      <p class="section-subtitle">Filter by location, price, area and more</p>
+    </div>
+  </div>
+
+  <div class="search-tabs">
+    <button class="tab-btn active" data-tab="buy" onclick="switchTab(this,'buy')">
+      <span data-lang="sq">Blerje</span><span data-lang="en">Buy</span>
+    </button>
+    <button class="tab-btn" data-tab="rent" onclick="switchTab(this,'rent')">
+      <span data-lang="sq">Qira</span><span data-lang="en">Rent</span>
+    </button>
+    <button class="tab-btn" data-tab="invest" onclick="switchTab(this,'invest')">
+      <span data-lang="sq">Investim</span><span data-lang="en">Invest</span>
+    </button>
+    <button class="tab-btn" data-tab="commercial" onclick="switchTab(this,'commercial')">
+      <span data-lang="sq">Komerciale</span><span data-lang="en">Commercial</span>
+    </button>
+  </div>
+
+  <div class="search-filters">
+    <div class="filter-group">
+      <label><span data-lang="sq">Lokacioni</span><span data-lang="en">Location</span></label>
+      <input type="text" placeholder="Tiranë, Durrës, Vlorë...">
+    </div>
+    <div class="filter-group">
+      <label><span data-lang="sq">Lloji i Pronës</span><span data-lang="en">Property Type</span></label>
+      <select>
+        <option><span data-lang="sq">Të gjitha</span><span data-lang="en">All types</span></option>
+        <option>Apartament</option>
+        <option>Shtëpi / Villa</option>
+        <option>Tokë</option>
+        <option>Zyrë</option>
+        <option>Dyqan</option>
+        <option>Magazinë</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label><span data-lang="sq">Çmimi Maksimal</span><span data-lang="en">Max Price</span></label>
+      <select>
+        <option>€ 50,000</option>
+        <option>€ 100,000</option>
+        <option>€ 200,000</option>
+        <option>€ 500,000</option>
+        <option>€ 1,000,000+</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label><span data-lang="sq">Dhoma</span><span data-lang="en">Bedrooms</span></label>
+      <select>
+        <option>1+</option>
+        <option>2+</option>
+        <option>3+</option>
+        <option>4+</option>
+        <option>5+</option>
+      </select>
+    </div>
+    <button class="search-btn">
+      <span data-lang="sq">🔍 Kërko</span><span data-lang="en">🔍 Search</span>
+    </button>
+  </div>
+</section>
+
+<!-- PROPERTIES -->
+<section class="properties-section">
+  <div class="properties-header">
+    <div>
+      <div data-lang="sq">
+        <h2 class="section-title">Prona të Zgjedhura</h2>
+        <p class="section-subtitle">Oferta ekskluzive të verifikuara nga ekipi ynë</p>
+      </div>
+      <div data-lang="en">
+        <h2 class="section-title">Featured Properties</h2>
+        <p class="section-subtitle">Exclusive listings verified by our team</p>
+      </div>
+    </div>
+    <a href="#" class="view-all"><span data-lang="sq">Shiko të gjitha</span><span data-lang="en">View all</span></a>
+  </div>
+
+  <div class="properties-grid">
+    <!-- Card 1 (featured) -->
+    <div class="property-card">
+      <div class="property-tag"><span data-lang="sq">E Zgjedhur</span><span data-lang="en">Featured</span></div>
+      <div class="property-img" style="height:400px;background:linear-gradient(135deg,#6b8e8a,#4a6e6a);">
+        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=80" style="width:100%;height:100%;object-fit:cover;" onerror="this.outerHTML='🏡'">
+      </div>
+      <div class="property-info">
+        <div class="property-price">€ 320,000</div>
+        <div class="property-name">Villa Panoramike Sauk</div>
+        <div class="property-loc">📍 Sauk, Tiranë</div>
+        <div class="property-specs">
+          <div class="spec">🛏 4 <span data-lang="sq">dhoma</span><span data-lang="en">beds</span></div>
+          <div class="spec">🚿 3 <span data-lang="sq">banjo</span><span data-lang="en">baths</span></div>
+          <div class="spec">📐 220 m²</div>
+          <div class="spec">🌿 <span data-lang="sq">Kopsht</span><span data-lang="en">Garden</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="property-card">
+      <div class="property-tag" style="background:var(--charcoal);color:var(--cream)"><span data-lang="sq">I Ri</span><span data-lang="en">New</span></div>
+      <div class="property-img" style="background:linear-gradient(135deg,#a89880,#8a7866);">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=500&q=80" style="width:100%;height:100%;object-fit:cover;" onerror="this.outerHTML='🏢'">
+      </div>
+      <div class="property-info">
+        <div class="property-price">€ 145,000</div>
+        <div class="property-name">Apartament Bllok</div>
+        <div class="property-loc">📍 Blloku, Tiranë</div>
+        <div class="property-specs">
+          <div class="spec">🛏 2 <span data-lang="sq">dhoma</span><span data-lang="en">beds</span></div>
+          <div class="spec">🚿 1 <span data-lang="sq">banjo</span><span data-lang="en">bath</span></div>
+          <div class="spec">📐 85 m²</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="property-card">
+      <div class="property-tag" style="background:#2a5c40;color:var(--cream)">
+        <span data-lang="sq">Investim</span><span data-lang="en">Investment</span>
+      </div>
+      <div class="property-img" style="background:linear-gradient(135deg,#5a7a8a,#3a5a6a);">
+        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=500&q=80" style="width:100%;height:100%;object-fit:cover;" onerror="this.outerHTML='🏘'">
+      </div>
+      <div class="property-info">
+        <div class="property-price">€ 89,000</div>
+        <div class="property-name">Apartament Durrës Bregdet</div>
+        <div class="property-loc">📍 Plazhi i Durrësit</div>
+        <div class="property-specs">
+          <div class="spec">🛏 1 <span data-lang="sq">dhoma</span><span data-lang="en">bed</span></div>
+          <div class="spec">🚿 1 <span data-lang="sq">banjo</span><span data-lang="en">bath</span></div>
+          <div class="spec">📐 55 m²</div>
+          <div class="spec">🌊 <span data-lang="sq">Det</span><span data-lang="en">Sea view</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="property-card">
+      <div class="property-img" style="background:linear-gradient(135deg,#8a7a6a,#6a5a4a);">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=500&q=80" style="width:100%;height:100%;object-fit:cover;" onerror="this.outerHTML='🏠'">
+      </div>
+      <div class="property-info">
+        <div class="property-price">€ 210,000</div>
+        <div class="property-name">Shtëpi Vlorë Rivierë</div>
+        <div class="property-loc">📍 Vlorë, Shqipëri</div>
+        <div class="property-specs">
+          <div class="spec">🛏 3 <span data-lang="sq">dhoma</span><span data-lang="en">beds</span></div>
+          <div class="spec">🚿 2 <span data-lang="sq">banjo</span><span data-lang="en">baths</span></div>
+          <div class="spec">📐 160 m²</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="services-content">
+    <div data-lang="sq">
+      <h2 class="section-title">Shërbime të Plota</h2>
+      <p class="section-subtitle">Nga gjetja e pronës deri te mbyllja ligjore e transaksionit</p>
+    </div>
+    <div data-lang="en">
+      <h2 class="section-title">Complete Services</h2>
+      <p class="section-subtitle">From finding the property to legal closing of the transaction</p>
+    </div>
+    <div class="services-list">
+      <div class="service-item">
+        <div class="service-num">01</div>
+        <div class="service-text">
+          <h3><span data-lang="sq">Ndërmjetësim Imobiliar</span><span data-lang="en">Real Estate Brokerage</span></h3>
+          <p><span data-lang="sq">Agjentë profesionistë për blerje, shitje dhe qiradhënie të pronave rezidenciale dhe komerciale.</span><span data-lang="en">Professional agents for buying, selling and renting residential and commercial properties.</span></p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-num">02</div>
+        <div class="service-text">
+          <h3><span data-lang="sq">Këshilla Ligjore Pronësore</span><span data-lang="en">Property Legal Advisory</span></h3>
+          <p><span data-lang="sq">Juridikisht ndihma në kontrata, verifikimin e titujve dhe dokumentacionin e nevojshëm.</span><span data-lang="en">Legal assistance in contracts, title verification and required documentation.</span></p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-num">03</div>
+        <div class="service-text">
+          <h3><span data-lang="sq">Menaxhimi i Investimeve</span><span data-lang="en">Investment Management</span></h3>
+          <p><span data-lang="sq">Analizë tregu dhe strategji investimi për kthim maksimal nga prona juaj.</span><span data-lang="en">Market analysis and investment strategy for maximum return from your property.</span></p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-num">04</div>
+        <div class="service-text">
+          <h3><span data-lang="sq">Ligjet dhe Rregulloret e Reja</span><span data-lang="en">New Laws & Regulations</span></h3>
+          <p><span data-lang="sq">Informacion i azhurnuar mbi ndryshimet ligjore në tregun imobiliar shqiptar.</span><span data-lang="en">Up-to-date information on legal changes in the Albanian real estate market.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="services-visual">
+    <div class="services-visual-img">
+      <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80" style="width:100%;height:100%;object-fit:cover;" onerror="this.outerHTML='⚖️'">
+    </div>
+    <div class="legal-badge">
+      <span class="num">15+</span>
+      <span class="lbl"><span data-lang="sq">Avokatë Expert</span><span data-lang="en">Expert Lawyers</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog-section" id="blog">
+  <div class="blog-header">
+    <div>
+      <div data-lang="sq">
+        <h2 class="section-title">Blog Ligjor</h2>
+        <p class="section-subtitle">Artikuj dhe përmbledhje të ligjeve të reja imobiliare</p>
+      </div>
+      <div data-lang="en">
+        <h2 class="section-title">Legal Blog</h2>
+        <p class="section-subtitle">Articles and summaries of new real estate laws</p>
+      </div>
+    </div>
+    <a href="#" class="view-all"><span data-lang="sq">Të gjithë artikujt</span><span data-lang="en">All articles</span></a>
+  </div>
+
+  <div class="blog-grid">
+    <!-- Featured article -->
+    <div class="blog-card">
+      <div class="blog-img">
+        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=700&q=80" style="width:100%;height:100%;object-fit:cover;" onerror="this.outerHTML='📜'">
+      </div>
+      <div class="blog-info">
+        <div class="blog-category"><span data-lang="sq">Legjislacion i Ri</span><span data-lang="en">New Legislation</span></div>
+        <h3 class="blog-title">
+          <span data-lang="sq">Ndryshimet e Kodit Civil 2025 dhe Ndikimi në Transaksionet Imobiliare</span>
+          <span data-lang="en">2025 Civil Code Amendments and Their Impact on Real Estate Transactions</span>
+        </h3>
+        <p class="blog-excerpt">
+          <span data-lang="sq">Shqyrtim i hollësishëm i reformave të fundit ligjore dhe çfarë duhet të dinë blerësit dhe shitësit e pronave...</span>
+          <span data-lang="en">A detailed review of the latest legal reforms and what property buyers and sellers need to know...</span>
+        </p>
+        <div class="blog-meta">
+          <span>15 Janar 2025</span>
+          <a href="#" class="read-more"><span data-lang="sq">Lexo më shumë</span><span data-lang="en">Read more</span> →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article 2 -->
+    <div class="blog-card">
+      <div class="blog-img" style="background:linear-gradient(135deg,#c8c0b0,#a89880);">
+        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&q=80" style="width:100%;height:100%;object-fit:cover;" onerror="this.outerHTML='📋'">
+      </div>
+      <div class="blog-info">
+        <div class="blog-category"><span data-lang="sq">Taksa & Tatime</span><span data-lang="en">Tax & Duties</span></div>
+        <h3 class="blog-title">
+          <span data-lang="sq">Taksat e Reja mbi Pronën 2025</span>
+          <span data-lang="en">New Property Taxes 2025</span>
+        </h3>
+        <p class="blog-excerpt"><span data-lang="sq">Udhëzim praktik mbi detyrimet tatimore të pronës...</span><span data-lang="en">Practical guide on property tax obligations...</span></p>
+        <div class="blog-meta">
+          <span>8 Janar 2025</span>
+          <a href="#" class="read-more"><span data-lang="sq">Lexo</span><span data-lang="en">Read</span> →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article 3 -->
+    <div class="blog-card">
+      <div class="blog-img" style="background:linear-gradient(135deg,#b0c0c8,#90a0a8);">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" style="width:100%;height:100%;object-fit:cover;" onerror="this.outerHTML='🏗️'">
+      </div>
+      <div class="blog-info">
+        <div class="blog-category"><span data-lang="sq">Investim</span><span data-lang="en">Investment</span></div>
+        <h3 class="blog-title">
+          <span data-lang="sq">Si të Investoni Sigurt në Pronë në Shqipëri</span>
+          <span data-lang="en">How to Invest Safely in Albanian Real Estate</span>
+        </h3>
+        <p class="blog-excerpt"><span data-lang="sq">Këshilla eksperte për investitorët e huaj dhe vendas...</span><span data-lang="en">Expert advice for foreign and domestic investors...</span></p>
+        <div class="blog-meta">
+          <span>2 Janar 2025</span>
+          <a href="#" class="read-more"><span data-lang="sq">Lexo</span><span data-lang="en">Read</span> →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-info">
+    <div data-lang="sq">
+      <h2 class="section-title">Na Kontaktoni</h2>
+      <p class="section-subtitle">Ekipi ynë është gati t'ju ndihmojë</p>
+    </div>
+    <div data-lang="en">
+      <h2 class="section-title">Contact Us</h2>
+      <p class="section-subtitle">Our team is ready to assist you</p>
+    </div>
+    <div class="contact-detail">
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div class="contact-item-text">
+          <strong><span data-lang="sq">Adresa</span><span data-lang="en">Address</span></strong>
+          Rruga Ismail Qemali, Nr. 12, Blloku, Tiranë 1019
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div class="contact-item-text">
+          <strong><span data-lang="sq">Telefon</span><span data-lang="en">Phone</span></strong>
+          +355 4 222 3344
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-item-text">
+          <strong>Email</strong>
+          info@terra-al.com
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div class="contact-item-text">
+          <strong><span data-lang="sq">Orari</span><span data-lang="en">Hours</span></strong>
+          <span data-lang="sq">E Hënë–E Premte: 09:00–18:00</span>
+          <span data-lang="en">Monday–Friday: 09:00–18:00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-form">
+    <div data-lang="sq">
+      <h2 class="section-title">Dërgoni Mesazh</h2>
+    </div>
+    <div data-lang="en">
+      <h2 class="section-title">Send a Message</h2>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label><span data-lang="sq">Emri</span><span data-lang="en">First Name</span></label>
+        <input type="text">
+      </div>
+      <div class="form-group">
+        <label><span data-lang="sq">Mbiemri</span><span data-lang="en">Last Name</span></label>
+        <input type="text">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email">
+      </div>
+      <div class="form-group">
+        <label><span data-lang="sq">Telefon</span><span data-lang="en">Phone</span></label>
+        <input type="tel">
+      </div>
+    </div>
+    <div class="form-group">
+      <label><span data-lang="sq">Shërbimi i Kërkuar</span><span data-lang="en">Service Requested</span></label>
+      <select>
+        <option><span data-lang="sq">Blerje Prone</span><span data-lang="en">Property Purchase</span></option>
+        <option data-lang="sq">Shitje Prone</option>
+        <option data-lang="en" style="display:none">Property Sale</option>
+        <option><span data-lang="sq">Qiradhënie</span><span data-lang="en">Rental</span></option>
+        <option><span data-lang="sq">Këshillë Ligjore</span><span data-lang="en">Legal Advisory</span></option>
+        <option><span data-lang="sq">Investim</span><span data-lang="en">Investment</span></option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label><span data-lang="sq">Mesazhi</span><span data-lang="en">Message</span></label>
+      <textarea rows="4"></textarea>
+    </div>
+    <button class="btn-primary" style="width:100%;padding:16px;">
+      <span data-lang="sq">Dërgo Mesazhin →</span><span data-lang="en">Send Message →</span>
+    </button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo" style="color:var(--cream);">TER<span>R</span>A</a>
+      <p>
+        <span data-lang="sq">Platformë e plotë imobiliare dhe ligjore në Shqipëri. Zgjidhjet tona mbulojnë çdo aspekt të tregut të pronës.</span>
+        <span data-lang="en">A complete real estate and legal platform in Albania. Our solutions cover every aspect of the property market.</span>
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4><span data-lang="sq">Prona</span><span data-lang="en">Properties</span></h4>
+      <ul>
+        <li><a href="#"><span data-lang="sq">Blerje</span><span data-lang="en">For Sale</span></a></li>
+        <li><a href="#"><span data-lang="sq">Qira</span><span data-lang="en">For Rent</span></a></li>
+        <li><a href="#"><span data-lang="sq">Investim</span><span data-lang="en">Investment</span></a></li>
+        <li><a href="#"><span data-lang="sq">Komerciale</span><span data-lang="en">Commercial</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4><span data-lang="sq">Shërbime</span><span data-lang="en">Services</span></h4>
+      <ul>
+        <li><a href="#"><span data-lang="sq">Këshilla Ligjore</span><span data-lang="en">Legal Advisory</span></a></li>
+        <li><a href="#"><span data-lang="sq">Vlerësim Prone</span><span data-lang="en">Property Valuation</span></a></li>
+        <li><a href="#"><span data-lang="sq">Menaxhim Investimi</span><span data-lang="en">Investment Mgmt</span></a></li>
+        <li><a href="#"><span data-lang="sq">Blog Ligjor</span><span data-lang="en">Legal Blog</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4><span data-lang="sq">Kontakt</span><span data-lang="en">Contact</span></h4>
+      <ul>
+        <li><a href="#">+355 4 222 3344</a></li>
+        <li><a href="#">info@terra-al.com</a></li>
+        <li><a href="#">Tiranë, Shqipëri</a></li>
+        <li><a href="#"><span data-lang="sq">Na Gjeni në Hartë</span><span data-lang="en">Find Us on Map</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 TERRA Imobiliare. <span data-lang="sq">Të gjitha të drejtat e rezervuara.</span><span data-lang="en">All rights reserved.</span></span>
+    <div style="display:flex;gap:24px;">
+      <a href="#" style="color:var(--muted);font-size:12px;text-decoration:none;"><span data-lang="sq">Politika e Privatësisë</span><span data-lang="en">Privacy Policy</span></a>
+      <a href="#" style="color:var(--muted);font-size:12px;text-decoration:none;"><span data-lang="sq">Kushtet e Shërbimit</span><span data-lang="en">Terms of Service</span></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Language switcher
+  function setLang(lang) {
+    if (lang === 'en') {
+      document.body.classList.add('lang-en');
+      document.getElementById('btn-en').classList.add('active');
+      document.getElementById('btn-sq').classList.remove('active');
+      document.documentElement.lang = 'en';
+    } else {
+      document.body.classList.remove('lang-en');
+      document.getElementById('btn-sq').classList.add('active');
+      document.getElementById('btn-en').classList.remove('active');
+      document.documentElement.lang = 'sq';
+    }
+    localStorage.setItem('terra-lang', lang);
+  }
+
+  // Restore saved lang
+  const savedLang = localStorage.getItem('terra-lang');
+  if (savedLang) setLang(savedLang);
+
+  // Tab switcher
+  function switchTab(el, tab) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  // Scroll-reveal animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.property-card, .blog-card, .service-item, .stat-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
